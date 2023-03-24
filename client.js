@@ -13,6 +13,14 @@ const connect = function () {
 
   conn.on("connect", () => {
     console.log("You are connected!");
+    conn.write("Name: heX");
+    // setTimeout(() => {conn.write("Move: up")}, 1000);
+    // setTimeout(() => {conn.write("Move: up")}, 2000);
+    // setTimeout(() => {conn.write("Move: up")}, 3000);
+    const hello = setInterval(() => {
+      conn.write("Move: up")
+    }, 500);
+   setTimeout(() => {clearInterval(hello)},5000);
   });
 
   conn.on('data', () => {
