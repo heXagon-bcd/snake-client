@@ -11,7 +11,6 @@ Before you can run this client, you will need to be running the server side whic
 !["screenshot description"](#)
 !["screenshot description"](#)
 
-
 ## Getting Started
 
 - Follow steps inside the snek server repo to run the server side
