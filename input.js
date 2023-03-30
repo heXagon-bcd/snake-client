@@ -11,6 +11,7 @@ const setupInput = function(conn) {
   stdin.on("data", handleUserInput);
   return stdin;
 };
+//handles user input by passing key strokes and pushing to server using connection.write
 const handleUserInput = function(key) {
   if (key === '\u0003') {
     process.exit();
