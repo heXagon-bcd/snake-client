@@ -1,10 +1,11 @@
 const net = require("net");
+const { IP, PORT } = require("./constants");
 
 // establishes a connection with the game server
 const connect = function () {
   const conn = net.createConnection({
-    host: "localhost",// IP address here,
-    port: 50541,// PORT number here,
+    host: IP,// IP address here,
+    port: PORT,// PORT number here,
 
   });
 
@@ -14,13 +15,13 @@ const connect = function () {
   conn.on("connect", () => {
     console.log("You are connected!");
     conn.write("Name: heX");
-    // setTimeout(() => {conn.write("Move: up")}, 1000);
-    // setTimeout(() => {conn.write("Move: up")}, 2000);
-    // setTimeout(() => {conn.write("Move: up")}, 3000);
-    const hello = setInterval(() => {
-      conn.write("Move: up")
-    }, 500);
-   setTimeout(() => {clearInterval(hello)},5000);
+  //   setTimeout(() => {conn.write("Move: up")}, 1000);
+  //   setTimeout(() => {conn.write("Move: up")}, 2000);
+  //   setTimeout(() => {conn.write("Move: up")}, 3000);
+  //   const hello = setInterval(() => {
+  //     conn.write("Move: up")
+  //   }, 500);
+  //  setTimeout(() => {clearInterval(hello)},5000);
   });
 
   conn.on('data', () => {
@@ -29,5 +30,5 @@ const connect = function () {
   return conn;
 };
 
-module.exports = connect;
+module.exports = {connect};
 
